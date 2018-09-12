@@ -1,0 +1,14 @@
+#head-info{
+  background-color: dodgerblue;
+  padding: 7px 7px 7px 3px;
+}
+
+h1{
+  font-family:sans-serif;
+  font-size: 48px;
+  margin: 16px;
+  color: white;
+}
+body{
+  background-color: black
+}
