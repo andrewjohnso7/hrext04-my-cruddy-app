@@ -16,8 +16,9 @@ $(document).ready(function() {
 
     localStorage.setItem(inputKey, inputValue);
     // data-
-    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
-    $(".saved-container").html(itemHtml);
+    // let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
+    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + '</div>';
+    $(".saved-container").append(itemHtml);
     //console.log(localStorage);
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
@@ -48,8 +49,8 @@ $(document).ready(function() {
    $(".del-text-btn").on("click", function() {
     //  alert('item deleted? check the console'); // maybe change to a window.confirm
      window.confirm('Are you sure?');
-    localStorage.clear();
-     //  localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
+    // localStorage.clear();
+      localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
      $(".user-input-title").val("");
      $(".user-input-body").val("");
      // clearing display? what if I have multiple items?
@@ -66,7 +67,7 @@ $(document).ready(function() {
 
 /* 
 make the input go into the saved-container area √
-make the input got into the saved-container, in an individual container.
+make the input got into the saved-container, in an individual container. √
 I want to display all of the local storage in saved-container
 
 */
