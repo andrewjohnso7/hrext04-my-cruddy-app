@@ -78,10 +78,10 @@ input{
 }
 
 canvas{
-  margin-left: -8px;
+  margin-left: -9px;
   opacity: 0.33;
   margin-top: -800px;
-  margin-bottom: 355px;
+  margin-bottom: 350px;
 }
 /*
 change the placeholder and input fonts
