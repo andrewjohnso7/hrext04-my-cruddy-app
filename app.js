@@ -1,20 +1,46 @@
 $(document).ready(function() {
-
-  $(".saved-container").on
-
+// write a function that loads all of local storage and puts it into saved container
+  $(".saved-container").on("click", function(){
+    // write a function that populates the saved container with every key on load
+    // console.log("AMIRITE");
+    // 
+    for(var i = 0; i < localStorage.length; i++){
+      $(".saved-container").append();
+    }
+    
+    
+  })
+  let inputKeyArray = [];
+  let inputValArray = [];
+  
   $(".add-text-btn").on("click", function(){
 
     // store values
     let inputKey = $(".user-input-title").val();
     let inputValue = $(".user-input-body").val();
-
     // clear values
     $(".user-input-title").val("");
     $(".user-input-body").val("");
 
     console.log(inputKey, inputValue);
-
+    // localStorage.setItem('items',JSON.stringify(inputArray))
+    // let data = JSON.parse(localStorage.getItem('items'))
+    // data.forEach(element => {
+    //   $(".saved-content").append(element);
+    // });
+    inputKeyArray.push(inputKey);
+    inputValArray.push(inputValue);
     localStorage.setItem(inputKey, inputValue);
+
+let countWords = function(string){
+  var str = string.split(' ');
+  var count = 0
+  for(var i = 0; i < str.length; i++){
+    count++
+  }
+  return count;
+}
+console.log(countWords(inputValue));
     // data-
     // let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
     let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + '</div>';
@@ -58,6 +84,9 @@ $(document).ready(function() {
      // refresh from storage?
    });
 
+   $("display-item").on("mouseover",function(){
+
+   })
 
    // iterative approach to adding items
    // store data as stringified array of objects
@@ -70,7 +99,33 @@ make the input go into the saved-container area √
 make the input got into the saved-container, in an individual container. √
 I want to display all of the local storage in saved-container
 
+
+// write a function that counts the number of words in a string. inputValue is the string.
 */
-
-
+var chart = c3.generate({
+  data: {
+    columns: [
+      ['sleep', 8],
+      ['eat', 3],
+      ['code', 7],
+      ['relax', 2],
+      ['other', 4]
+    ],
+    type: 'pie',
+    colors:{
+      sleep: '#D81159',
+      eat: '#8F2D56',
+      code: '#218380',
+      relax: '#FBB13C',
+      other: '#726DA8'
+    }
+},
+pie: {
+    label: {
+        format: function (value, ratio, id) {
+            return d3.format()(value) + ' hours';
+        }
+    }
+}
+});
 });
