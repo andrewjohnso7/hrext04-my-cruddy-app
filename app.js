@@ -84,10 +84,6 @@ console.log(countWords(inputValue));
      // refresh from storage?
    });
 
-   $("display-item").on("mouseover",function(){
-
-   })
-
    // iterative approach to adding items
    // store data as stringified array of objects
    // store data with individual keys
@@ -97,28 +93,75 @@ console.log(countWords(inputValue));
 /* 
 make the input go into the saved-container area √
 make the input got into the saved-container, in an individual container. √
-I want to display all of the local storage in saved-container
+I want to display all of the local storage in saved-container 
 
 
-// write a function that counts the number of words in a string. inputValue is the string.
+// write a function that counts the number of words in a string. inputValue is the string. √
 */
+// write a function that counts the number of words in a string and returns an nested array of
+// the top 5 words and how many times those words are counted. the first item in the array
+// should be a name, the second the number of times that word appears. 
+/* 
+  create an object? 
+  check the object to see if the array[i] exists inside of the object 
+   if it doesn't 
+     create it inside the object and store 1 at it
+   if it does, 
+     add one to the value
+  exit loop
+*/
+let collections = function(string){
+  str = string.split(' ');
+  let obj = {};
+  for(var i = 0; i < str.length; i++){
+    if(!obj.hasOwnProperty(str[i])){
+      obj[str[i]] = 1;
+    } else{
+      obj[str[i]]++;
+    }
+  }
+  // return obj;
+// }
+// let allOfEm = function(object){
+  let bigArr =[];
+    for(var element in obj){
+      arr = [];
+      arr.push(element);
+      arr.push(object[element]);
+      bigArr.push(arr)
+    }
+    return bigArr;
+}
+// preData = collections(inputValue)
+
 var chart = c3.generate({
   data: {
-    columns: [
-      ['sleep', 8],
-      ['eat', 3],
-      ['code', 7],
-      ['relax', 2],
-      ['other', 4]
-    ],
-    type: 'pie',
-    colors:{
-      sleep: '#D81159',
-      eat: '#8F2D56',
-      code: '#218380',
-      relax: '#FBB13C',
-      other: '#726DA8'
-    }
+    columns: [ [ 'This', 1 ],
+    [ 'is', 2 ],
+    [ 'a', 5 ],
+    [ 'story', 1 ],
+    [ 'all', 3 ],
+    [ 'about', 2 ],
+    [ 'how', 2 ],
+    [ 'my', 6 ],
+    [ 'life', 1 ],
+    [ 'got', 3 ],
+    [ 'flipped,', 1 ],
+    [ 'turned', 1 ],
+    [ 'upside', 1 ],
+    [ 'down.', 1 ],
+    [ 'And', 1 ],
+    [ 'I\'d', 1 ],
+    [ 'like', 1 ]
+  ],
+    type: 'donut',
+    // colors:{
+    //   sleep: '#D81159',
+    //   eat: '#8F2D56',
+    //   code: '#218380',
+    //   relax: '#FBB13C',
+    //   other: '#726DA8'
+    // }
 },
 pie: {
     label: {
