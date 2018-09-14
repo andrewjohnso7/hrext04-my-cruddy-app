@@ -9,7 +9,7 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
     <script src="app.js"></script>
-
+    
   </head>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.21/c3.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
@@ -20,11 +20,14 @@
     </header>
     <textarea class="user-input-body" placeholder="Type what you want"></textarea>
     <input type="text" class="user-input-title" placeholder="What do you call this...">
+    
+    <button class="add-text-btn">Save</button>
+    <button class="del-text-btn">Clear Saved History</button>
+    <div class= "saved-container" placeholder= "Nothing Saved"></div>
+    <div class="display"></div>
+    <div id="chart"></div>
+    <canvas></canvas>
+    <script src= "main.js"></script>
 
-  <button class="add-text-btn">Save</button>
-  <button class="del-text-btn">Clear Saved History</button>
-  <div class= "saved-container" placeholder= "Nothing Saved"></div>
-  <div class="display"></div>
-  <div id="chart"></div>
   </body>
 </html>

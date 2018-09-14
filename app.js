@@ -4,9 +4,7 @@ $(document).ready(function() {
     // write a function that populates the saved container with every key on load
     // console.log("AMIRITE");
     // 
-    for(var i = 0; i < localStorage.length; i++){
-      $(".saved-container").append();
-    }
+
     
     
   })
@@ -41,6 +39,44 @@ let countWords = function(string){
   return count;
 }
 console.log(countWords(inputValue));
+
+var chart = c3.generate({
+  data: {
+    columns: [ [ 'This', 1 ],
+    [ 'is', 2 ],
+    [ 'a', 5 ],
+    [ 'story', 1 ],
+    [ 'all', 3 ],
+    [ 'about', 2 ],
+    [ 'how', 2 ],
+    [ 'my', 6 ],
+    [ 'life', 1 ],
+    [ 'got', 3 ],
+    [ 'flipped,', 1 ],
+    [ 'turned', 1 ],
+    [ 'upside', 1 ],
+    [ 'down.', 1 ],
+    [ 'And', 1 ],
+    [ 'I\'d', 1 ],
+    [ 'like', 1 ]
+  ],
+    type: 'donut',
+    // colors:{
+    //   sleep: '#D81159',
+    //   eat: '#8F2D56',
+    //   code: '#218380',
+    //   relax: '#FBB13C',
+    //   other: '#726DA8'
+    // }
+},
+pie: {
+    label: {
+        format: function (value, ratio, id) {
+            return d3.format()(value) + ' hours';
+        }
+    }
+}
+});
     // data-
     // let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
     let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + '</div>';
@@ -134,41 +170,5 @@ let collections = function(string){
 }
 // preData = collections(inputValue)
 
-var chart = c3.generate({
-  data: {
-    columns: [ [ 'This', 1 ],
-    [ 'is', 2 ],
-    [ 'a', 5 ],
-    [ 'story', 1 ],
-    [ 'all', 3 ],
-    [ 'about', 2 ],
-    [ 'how', 2 ],
-    [ 'my', 6 ],
-    [ 'life', 1 ],
-    [ 'got', 3 ],
-    [ 'flipped,', 1 ],
-    [ 'turned', 1 ],
-    [ 'upside', 1 ],
-    [ 'down.', 1 ],
-    [ 'And', 1 ],
-    [ 'I\'d', 1 ],
-    [ 'like', 1 ]
-  ],
-    type: 'donut',
-    // colors:{
-    //   sleep: '#D81159',
-    //   eat: '#8F2D56',
-    //   code: '#218380',
-    //   relax: '#FBB13C',
-    //   other: '#726DA8'
-    // }
-},
-pie: {
-    label: {
-        format: function (value, ratio, id) {
-            return d3.format()(value) + ' hours';
-        }
-    }
-}
-});
+
 });

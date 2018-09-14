@@ -76,6 +76,13 @@ input{
   margin-top: -280px;
   margin-right: -400px;
 }
+
+canvas{
+  margin-left: -8px;
+  opacity: 0.33;
+  margin-top: -800px;
+  margin-bottom: 355px;
+}
 /*
 change the placeholder and input fonts
 make the containersinside saved-containers fancy
